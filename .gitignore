@@ -3,3 +3,4 @@
 signal_alarm 
 signal_handler 
 signal_segfault
+signal_sigaction
