@@ -14,8 +14,8 @@ void handler(){
 int main(int argc, char* argv[]){
     
     struct sigaction sa = {0};
-    sigaction(SIGUSR1, &sa, NULL); 
     sa.sa_handler = handler;  
+    sigaction(SIGUSR1, &sa, NULL); 
     
     printf("%d\n", getpid());
     while(1){
