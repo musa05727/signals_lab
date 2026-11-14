@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
     union sigval value; 
 
     value.sival_int = random_val; 
-
+    //sends the random value to a process with id of argv[1]
     sigqueue(atoi(argv[1]), SIGUSR1, value);
     printf("sent %d to process %d\n", random_val, atoi(argv[1])); 
     return 0; 

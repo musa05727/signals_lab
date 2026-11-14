@@ -11,9 +11,10 @@
 */
 #include <stdio.h>
 #include <signal.h>
-#include <stdlib.h>
+#include <unistd.h>
 void seg_handler(){
     printf("Seg fault received\n"); 
+    sleep(1); 
     //if i don't have an exit, the program will keep printing the above statement.
     //This is because when the signal is handled, the program goes back to derefrencing a null pointer; 
 }

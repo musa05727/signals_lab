@@ -21,6 +21,7 @@ int main(int argc, char* argv[]){
     sa.sa_sigaction = handler;
     sa.sa_flags = SA_SIGINFO; 
     sigemptyset(&sa.sa_mask); 
+    //register SIGUSR1
     sigaction(SIGUSR1, &sa, NULL); 
     printf("%d\n", getpid());
     while(1){
