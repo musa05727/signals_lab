@@ -6,6 +6,8 @@
 * Modified by:
 * Musa Abdul Hamid
 * Brief summary of modifications:
+* Registered SIGSEGV and its handler so the program doesn't generate a cored dump.
+* The handler prints that the signal was received repeatedly. 
 */
 #include <stdio.h>
 #include <signal.h>
@@ -14,7 +16,6 @@ void seg_handler(){
     printf("Seg fault received\n"); 
     //if i don't have an exit, the program will keep printing the above statement.
     //This is because when the signal is handled, the program goes back to derefrencing a null pointer; 
-    exit(0);
 }
 int main (int argc, char* argv[]) {
     signal(SIGSEGV, seg_handler); 

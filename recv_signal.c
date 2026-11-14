@@ -1,8 +1,14 @@
-
+/**
+* File: recv_signal.c 
+* Modified by: Musa Abdul Hamid 
+*
+* Brief summary of program:
+* prints the number sent by send_signal.c by using sigaction to register SIGSUR1 and 
+* the sigaction struct to get the number.  
+*/
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
-#include <wait.h>
 
 void handler(int sig, siginfo_t *info, void *context ){
     if(info->si_code == SI_QUEUE){
@@ -10,8 +16,7 @@ void handler(int sig, siginfo_t *info, void *context ){
     }
     
 }
-int main(int argc, char* argv[]){
-    wait(NULL); 
+int main(int argc, char* argv[]){ 
     struct sigaction sa = {0}; 
     sa.sa_sigaction = handler;
     sa.sa_flags = SA_SIGINFO; 

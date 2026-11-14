@@ -3,6 +3,9 @@
 * Modified by:
 * Musa Abdul Hamid
 * Brief summary of program:
+* Registers SIGUSR1 by using sigaction(). 
+* The handler prints the pid. 
+* SIGUSR1 is sent by using the command: kill -SIGUSR1 <pid>
 */
 #include <stdio.h>
 #include <signal.h>

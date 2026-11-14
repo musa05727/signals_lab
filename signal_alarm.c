@@ -4,6 +4,7 @@
 *
 * Brief summary of program:
 * Schedules an alarm to be sent after 5 seconds. 
+* Then, the alarm_handler() prints out that the signal was received and exits.
 */
 #include <signal.h>
 #include <unistd.h>

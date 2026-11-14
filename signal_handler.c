@@ -22,7 +22,10 @@ void handle_signal() {
     }
 }
 int main() {
+    printf("%d\n", getpid()); 
     // Register for the signal
+    //SIGINT was sent using the CTRL+C 
+    //and kill command: kill <PID>
     signal(SIGINT, handle_signal);
     // Wait until a signal is received
     while(1) {

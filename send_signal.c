@@ -1,10 +1,17 @@
+/**
+* File: send_signal.c 
+* Modified by: Musa Abdul Hamid 
+*
+* Brief summary of program:
+* generates a random number to send to a process using sigqueue. 
+*/
 #include <stdio.h>
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
 
-
+ 
 int main(int argc, char* argv[]){
     srand(time(NULL)); 
 
